@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="zh-HK" class="scroll-smooth">
+<head>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%230f172a%22/><text x=%2250%22 y=%2252%22 dominant-baseline=%22central%22 text-anchor=%22middle%22 font-family=%22'Times New Roman', serif%22 font-size=%2265%22 font-weight=%22bold%22 fill=%22%23e2dfd8%22>L</text></svg>">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>阮靖菓 (Luna Yuen) - 聖保祿天主教小學 (SPPCS) 升小學個人檔案</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@400;600;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --color-primary: #38466b;      /* Navy Blue */
+            --color-secondary: #a3333d;    /* Deep Red Accent */
+            --color-secondary-text: #ffffff; 
+            --color-bg: #f3f1eb;           /* Soft Matte Warm Beige Background */
+            --color-surface: #fbfaf8;      /* Cream White Card Surface */
+            --color-border: #e2dfd8;
+            --color-footer: #1c9d83;       /* Teal Footer */
+            --border-pattern: repeating-linear-gradient(-45deg, #1c9d83 0px, #1c9d83 15px, #ffffff 15px, #ffffff 20px, #9ed9f2 20px, #9ed9f2 35px, #ffffff 35px, #ffffff 40px);
+        }
+
+        /* Custom Scrollbars */
+        ::-webkit-scrollbar { width: 8px; height: 6px; }
+        ::-webkit-scrollbar-track { background: var(--color-bg); }
+        ::-webkit-scrollbar-thumb { background: var(--color-border); border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--color-primary); }
+        
+        .theme-pattern-bg { background: var(--border-pattern); }
+
+        /* Smooth scroll margin so the sticky header doesn't cover content when auto-scrolling */
+        .page-content { 
+            scroll-margin-top: 180px; 
+        }
+
+        /* Custom transition for Ken Burns image effect */
+        .slide-img {
+            transition: opacity 1s ease-in-out, transform 8s ease-out;
+        }
+        
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Noto Sans TC"', 'sans-serif'],
+                        serif: ['"Noto Serif TC"', 'serif'],
+                    },
+                    colors: {
+                        theme: {
+                            primary: 'var(--color-primary)',
+                            secondary: 'var(--color-secondary)',
+                            secondaryText: 'var(--color-secondary-text)',
+                            bg: 'var(--color-bg)',
+                            surface: 'var(--color-surface)',
+                            border: 'var(--color-border)',
+                            footer: 'var(--color-footer)',
+                        }
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.5s ease-out',
+                        'slide-up': 'slideUp 0.6s ease-out',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideUp: {
+                            '0%': { opacity: '0', transform: 'translateY(15px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-theme-bg text-gray-800 font-sans antialiased min-h-screen flex flex-col">
+
+    <!-- Header Section -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center py-4 gap-4">
+                <div class="flex items-center text-center md:text-left">
+                    <div>
+                        <h1 class="text-2xl md:text-3xl font-serif font-bold text-theme-primary tracking-wider">
+                            LUNA YUEN <span class="text-lg md:text-xl text-gray-500 font-sans font-normal ml-2">阮靖菓</span>
+                        </h1>
+                        <p class="text-xs text-gray-400 mt-1 uppercase tracking-widest font-sans">Primary School Admission Portfolio</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Navigation Tabs -->
+            <div class="flex justify-center md:justify-start items-center pb-3 overflow-x-auto hide-scrollbar scroll-smooth" id="nav-container">
+                <nav class="flex w-full space-x-1.5 md:space-x-4 border-b border-gray-100 pb-1 min-w-max" id="nav-tabs">
+                    <button onclick="switchPage('page1')" class="nav-btn shrink-0 px-3.5 py-2.5 text-sm md:text-base font-semibold rounded-lg transition-all duration-300 bg-theme-primary text-white shadow-sm" data-target="page1">
+                        封面與簡介
+                    </button>
+                    <!-- NEW SUMMARY TAB -->
+                    <button onclick="switchPage('page-summary')" class="nav-btn shrink-0 px-3.5 py-2.5 text-sm md:text-base font-semibold rounded-lg transition-all duration-300 text-gray-600 hover:bg-theme-bg hover:text-theme-primary" data-target="page-summary">
+                        總結與回顧
+                    </button>
+                    <button onclick="switchPage('page2')" class="nav-btn shrink-0 px-3.5 py-2.5 text-sm md:text-base font-semibold rounded-lg transition-all duration-300 text-gray-600 hover:bg-theme-bg hover:text-theme-primary" data-target="page2">
+                        家長自薦信
+                    </button>
+                    <button onclick="switchPage('page3')" class="nav-btn shrink-0 px-3.5 py-2.5 text-sm md:text-base font-semibold rounded-lg transition-all duration-300 text-gray-600 hover:bg-theme-bg hover:text-theme-primary" data-target="page3">
+                        學術與品格
+                    </button>
+                    <button onclick="switchPage('page4')" class="nav-btn shrink-0 px-3.5 py-2.5 text-sm md:text-base font-semibold rounded-lg transition-all duration-300 text-gray-600 hover:bg-theme-bg hover:text-theme-primary" data-target="page4">
+                        音樂與藝術
+                    </button>
+                    <button onclick="switchPage('page5')" class="nav-btn shrink-0 px-3.5 py-2.5 text-sm md:text-base font-semibold rounded-lg transition-all duration-300 text-gray-600 hover:bg-theme-bg hover:text-theme-primary" data-target="page5">
+                        附件與推薦
+                    </button>
+                </nav>
+            </div>
+        </div>
+        <div class="h-3 w-full theme-pattern-bg"></div>
+    </header>
+
+    <!-- Main Content Body -->
+    <main class="flex-grow w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12 flex flex-col space-y-16 md:space-y-24">
+        
+        <!-- PAGE 1: COVER AND INTRODUCTION -->
+        <div id="page1" class="page-content animate-fade-in">
+            <div class="bg-theme-surface rounded-3xl shadow-xl overflow-hidden border border-theme-border animate-slide-up">
+                <div class="grid grid-cols-1 md:grid-cols-12">
+                    <!-- Photo Side -->
+                    <div class="md:col-span-5 bg-gray-100 relative min-h-[400px] md:min-h-[550px] overflow-hidden">
+                        <img class="absolute inset-0 w-full h-full object-cover object-[15%_center] transition-transform duration-700 hover:scale-105" 
+                             src="https://abc16315.sg-host.com/image/7.jpg" 
+                             alt="Luna Portrait">
+                        <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/60 via-transparent to-transparent p-6 text-white md:hidden">
+                            <h2 class="text-3xl font-serif font-bold tracking-wide">阮靖菓</h2>
+                            <p class="text-sm opacity-90">Luna Yuen</p>
+                        </div>
+                    </div>
+
+                    <!-- Intro Side -->
+                    <div class="md:col-span-7 p-6 sm:p-10 lg:p-14 flex flex-col justify-center space-y-8">
+                        <div class="hidden md:block">
+                            <div class="uppercase tracking-widest text-[0.85rem] text-theme-secondary font-bold mb-1">PORTFOLIO 2025-2026</div>
+                            <h2 class="text-4xl lg:text-5xl font-serif text-theme-primary font-bold tracking-wide flex items-baseline">
+                                阮靖菓 <span class="text-2xl lg:text-3xl text-gray-500 font-serif font-normal ml-3">Luna Yuen</span>
+                            </h2>
+                        </div>
+                        
+                        <!-- SPPCS Intro Card -->
+                        <div class="space-y-8">
+                            <div class="bg-theme-bg/60 p-6 rounded-2xl border border-theme-border shadow-sm">
+                                <h3 class="text-lg font-serif font-bold text-theme-primary mb-3 border-b border-theme-border pb-2 flex items-center gap-2">
+                                    <svg class="w-5 h-5 text-theme-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
+                                    個人資料 <span class="font-normal text-xs text-theme-primary/80 ml-2">Personal Profile</span>
+                                </h3>
+                                <div class="grid grid-cols-[90px_1fr] gap-y-3.5 text-gray-700 text-sm md:text-base">
+                                    <div class="font-bold text-gray-900">姓名：</div>
+                                    <div>阮靖菓 (Luna Yuen)</div>
+                                    <div class="font-bold text-gray-900">就讀幼園：</div>
+                                    <div>香港靈糧堂幼稚園 (下午高丙班)</div>
+                                    <div class="font-bold text-gray-900">家長背景：</div>
+                                    <div class="leading-relaxed">母親 李瑩 為<span class="font-bold text-theme-secondary">聖保祿中學 (SPSS) 舊生</span>，深受保祿精神教育薰陶。</div>
+                                </div>
+                            </div>
+
+                            <div class="relative pl-6 border-l-4 border-theme-secondary">
+                                <h3 class="text-xl font-serif text-theme-primary font-bold mb-3">關於靖菓 <span class="font-normal text-sm text-theme-primary/80 ml-2">About Luna</span></h3>
+                                <p class="text-gray-700 leading-relaxed text-justify text-sm md:text-base">
+                                    「靖」寓意平安，「菓」寓意美好的果實。作為保祿舊生家庭，我們期盼 Luna 能傳承優良的「保祿精神」與「為一切人，成為一切」的校訓。在充滿大愛的環境中結出智慧與德行的果實。Luna 是一位具備極高自我驅動力與成長型思維、尊師重道且充滿同理心的溫暖女孩。
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- High-fidelity Stats Badge row -->
+                        <div class="grid grid-cols-3 gap-3 pt-2 text-center text-xs md:text-sm">
+    <div class="bg-white rounded-xl border border-theme-border py-3 shadow-sm transition hover:shadow-md">
+        <div class="font-serif font-bold text-theme-primary text-base md:text-lg">學術優異</div>
+        <div class="text-gray-400 text-[10px] uppercase mt-0.5">Highly Proficient</div>
+    </div>
+    <div class="bg-white rounded-xl border border-theme-border py-3 shadow-sm transition hover:shadow-md">
+        <div class="font-serif font-bold text-theme-primary text-base md:text-lg">弦樂專才</div>
+        <div class="text-gray-400 text-[10px] uppercase mt-0.5">Violin & Ukulele</div>
+    </div>
+    <div class="bg-white rounded-xl border border-theme-border py-3 shadow-sm transition hover:shadow-md">
+        <div class="font-serif font-bold text-theme-primary text-base md:text-lg">跆拳道六級</div>
+        <div class="text-gray-400 text-[10px] uppercase mt-0.5">Green Belt (6th)</div>
+    </div>
+    
+    <div class="bg-white rounded-xl border border-theme-border py-3 shadow-sm transition hover:shadow-md">
+        <div class="font-serif font-bold text-theme-primary text-base md:text-lg">成長型思維</div>
+        <div class="text-gray-400 text-[10px] uppercase mt-0.5">Growth Mindset</div>
+    </div>
+    <div class="bg-white rounded-xl border border-theme-border py-3 shadow-sm transition hover:shadow-md">
+        <div class="font-serif font-bold text-theme-primary text-base md:text-lg">堅毅自律</div>
+        <div class="text-gray-400 text-[10px] uppercase mt-0.5">Self-Disciplined</div>
+    </div>
+    <div class="bg-white rounded-xl border border-theme-border py-3 shadow-sm transition hover:shadow-md">
+        <div class="font-serif font-bold text-theme-primary text-base md:text-lg">充滿同理心</div>
+        <div class="text-gray-400 text-[10px] uppercase mt-0.5">Empathetic & Caring</div>
+    </div>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- NEW PAGE SUMMARY: HIGHLIGHTS & SUMMARY -->
+        <div id="page-summary" class="page-content animate-fade-in">
+            <div class="text-center mb-12 animate-slide-up">
+                <h2 class="text-3xl font-serif font-bold text-theme-primary inline-block border-b-4 border-theme-secondary pb-2">總結與回顧</h2>
+                <p class="mt-4 text-gray-500 max-w-2xl mx-auto text-sm md:text-base">豐富的校園生活與學習剪影</p>
+            </div>
+
+            <!-- 6 Image Frames identical to Attachments Grid formatting -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 animate-slide-up">
+                
+                <!-- Summary Frame 1 -->
+                <div class="bg-theme-surface p-5 rounded-2xl shadow-md border border-theme-border flex flex-col items-center text-center">
+                    <div class="w-full aspect-[3/4] bg-gray-50 rounded-xl border border-gray-200 mb-4 overflow-hidden relative shadow-sm">
+                        <img src="https://abc16315.sg-host.com/image/A.jpg" class="slide-img absolute inset-0 w-full h-full object-cover opacity-100 scale-100 sum-slide-1-item-1" alt="活動剪影 1A">
+                        <img src="https://abc16315.sg-host.com/image/B.jpg" class="slide-img absolute inset-0 w-full h-full object-cover opacity-0 scale-100 sum-slide-1-item-2" alt="活動剪影 1B">
+                        <div class="absolute bottom-3 left-1/2 transform -translate-x-1/2 flex space-x-2 z-20">
+                            <span class="w-2 h-2 rounded-full bg-white shadow sum-slide-1-dot-1 opacity-100 transition-all duration-300"></span>
+                            <span class="w-2 h-2 rounded-full bg-white shadow sum-slide-1-dot-2 opacity-50 transition-all duration-300"></span>
+                        </div>
+                    </div>
+                    <h4 class="font-bold text-theme-primary text-base mb-1">戶外運動</h4>
+                    <p class="text-xs text-gray-400">綠茵場上的活力與汗水</p>
+                </div>
+
+                <!-- Summary Frame 2 -->
+                <div class="bg-theme-surface p-5 rounded-2xl shadow-md border border-theme-border flex flex-col items-center text-center">
+                    <div class="w-full aspect-[3/4] bg-gray-50 rounded-xl border border-gray-200 mb-4 overflow-hidden relative shadow-sm">
+                        <img src="https://abc16315.sg-host.com/image/C.jpg" class="slide-img absolute inset-0 w-full h-full object-cover opacity-100 scale-100 sum-slide-2-item-1" alt="活動剪影 2A">
+                        <img src="https://abc16315.sg-host.com/image/D.jpg" class="slide-img absolute inset-0 w-full h-full object-cover opacity-0 scale-100 sum-slide-2-item-2" alt="活動剪影 2B">
+                        <div class="absolute bottom-3 left-1/2 transform -translate-x-1/2 flex space-x-2 z-20">
+                            <span class="w-2 h-2 rounded-full bg-white shadow sum-slide-2-dot-1 opacity-100 transition-all duration-300"></span>
+                            <span class="w-2 h-2 rounded-full bg-white shadow sum-slide-2-dot-2 opacity-50 transition-all duration-300"></span>
+                        </div>
+                    </div>
+                    <h4 class="font-bold text-theme-primary text-base mb-1">學習日常</h4>
+                    <p class="text-xs text-gray-400">中英文書寫的練習與進步</p>
+                </div>
+
+                <!-- Summary Frame 3 -->
+                <div class="bg-theme-surface p-5 rounded-2xl shadow-md border border-theme-border flex flex-col items-center text-center">
+                    <div class="w-full aspect-[3/4] bg-gray-50 rounded-xl border border-gray-200 mb-4 overflow-hidden relative shadow-sm">
+                        <img src="https://abc16315.sg-host.com/image/E.jpg" class="slide-img absolute inset-0 w-full h-full object-cover opacity-100 scale-100 sum-slide-3-item-1" alt="活動剪影 3A">
+                        <img src="https://abc16315.sg-host.com/image/F.jpg" class="slide-img absolute inset-0 w-full h-full object-cover opacity-0 scale-100 sum-slide-3-item-2" alt="活動剪影 3B">
+                        <div class="absolute bottom-3 left-1/2 transform -translate-x-1/2 flex space-x-2 z-20">
+                            <span class="w-2 h-2 rounded-full bg-white shadow sum-slide-3-dot-1 opacity-100 transition-all duration-300"></span>
+                            <span class="w-2 h-2 rounded-full bg-white shadow sum-slide-3-dot-2 opacity-50 transition-all duration-300"></span>
+                        </div>
+                    </div>
+                    <h4 class="font-bold text-theme-primary text-base mb-1">生活探索</h4>
+                    <p class="text-xs text-gray-400">科學展覽與生活體驗</p>
+                </div>
+
+                <!-- Summary Frame 4 -->
+                <div class="bg-theme-surface p-5 rounded-2xl shadow-md border border-theme-border flex flex-col items-center text-center">
+                    <div class="w-full aspect-[3/4] bg-gray-50 rounded-xl border border-gray-200 mb-4 overflow-hidden relative shadow-sm">
+                        <img src="https://abc16315.sg-host.com/image/G.jpg" class="slide-img absolute inset-0 w-full h-full object-cover opacity-100 scale-100 sum-slide-4-item-1" alt="活動剪影 4A">
+                        <img src="https://abc16315.sg-host.com/image/H.jpg" class="slide-img absolute inset-0 w-full h-full object-cover opacity-0 scale-100 sum-slide-4-item-2" alt="活動剪影 4B">
+                        <div class="absolute bottom-3 left-1/2 transform -translate-x-1/2 flex space-x-2 z-20">
+                            <span class="w-2 h-2 rounded-full bg-white shadow sum-slide-4-dot-1 opacity-100 transition-all duration-300"></span>
+                            <span class="w-2 h-2 rounded-full bg-white shadow sum-slide-4-dot-2 opacity-50 transition-all duration-300"></span>
+                        </div>
+                    </div>
+                    <h4 class="font-bold text-theme-primary text-base mb-1">愉快童年</h4>
+                    <p class="text-xs text-gray-400">派對的歡樂與教堂的寧靜</p>
+                </div>
+
+                <!-- Summary Frame 5 -->
+                <div class="bg-theme-surface p-5 rounded-2xl shadow-md border border-theme-border flex flex-col items-center text-center">
+                    <div class="w-full aspect-[3/4] bg-gray-50 rounded-xl border border-gray-200 mb-4 overflow-hidden relative shadow-sm">
+                        <img src="https://abc16315.sg-host.com/image/I.jpg" class="slide-img absolute inset-0 w-full h-full object-cover opacity-100 scale-100 sum-slide-5-item-1" alt="活動剪影 5A">
+                        <img src="https://abc16315.sg-host.com/image/J.jpg" class="slide-img absolute inset-0 w-full h-full object-cover opacity-0 scale-100 sum-slide-5-item-2" alt="活動剪影 5B">
+                        <div class="absolute bottom-3 left-1/2 transform -translate-x-1/2 flex space-x-2 z-20">
+                            <span class="w-2 h-2 rounded-full bg-white shadow sum-slide-5-dot-1 opacity-100 transition-all duration-300"></span>
+                            <span class="w-2 h-2 rounded-full bg-white shadow sum-slide-5-dot-2 opacity-50 transition-all duration-300"></span>
+                        </div>
+                    </div>
+                    <h4 class="font-bold text-theme-primary text-base mb-1">多元發展</h4>
+                    <p class="text-xs text-gray-400">跆拳道晉級與大自然探索</p>
+                </div>
+
+                <!-- Summary Frame 6 -->
+                <div class="bg-theme-surface p-5 rounded-2xl shadow-md border border-theme-border flex flex-col items-center text-center">
+                    <div class="w-full aspect-[3/4] bg-gray-50 rounded-xl border border-gray-200 mb-4 overflow-hidden relative shadow-sm">
+                        <img src="https://abc16315.sg-host.com/image/11.jpg" class="slide-img absolute inset-0 w-full h-full object-cover opacity-100 scale-100 sum-slide-6-item-1" alt="活動剪影 6A">
+                        <img src="https://abc16315.sg-host.com/image/12.jpg" class="slide-img absolute inset-0 w-full h-full object-cover opacity-0 scale-100 sum-slide-6-item-2" alt="活動剪影 6B">
+                        <div class="absolute bottom-3 left-1/2 transform -translate-x-1/2 flex space-x-2 z-20">
+                            <span class="w-2 h-2 rounded-full bg-white shadow sum-slide-6-dot-1 opacity-100 transition-all duration-300"></span>
+                            <span class="w-2 h-2 rounded-full bg-white shadow sum-slide-6-dot-2 opacity-50 transition-all duration-300"></span>
+                        </div>
+                    </div>
+                    <h4 class="font-bold text-theme-primary text-base mb-1">藝術與音樂</h4>
+                    <p class="text-xs text-gray-400">擁抱陽光與大自然</p>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- PAGE 2: PARENT LETTER -->
+        <div id="page2" class="page-content animate-fade-in">
+            <div class="max-w-4xl mx-auto space-y-8 animate-slide-up">
+                <div class="bg-theme-surface p-6 sm:p-10 lg:p-16 rounded-3xl shadow-xl border border-theme-border relative overflow-hidden">
+                    
+                    <div class="absolute top-0 inset-x-0 h-2 bg-theme-primary opacity-90"></div>
+
+                    <div class="mb-10 rounded-2xl overflow-hidden shadow-lg border border-theme-border">
+                        <img class="w-full h-64 md:h-80 object-cover object-[50%_75%] transition-transform duration-1000 hover:scale-105" 
+                             src="https://abc16315.sg-host.com/image/5.jpg" 
+                             alt="親子共讀">
+                    </div>
+
+                    <div class="font-serif text-theme-primary text-3xl font-bold mb-8 text-center border-b border-theme-border pb-6 tracking-wide flex justify-center items-center gap-2">
+                        <span>家長自薦信</span>
+                    </div>
+
+                    <div id="sppcs-letter-text" class="space-y-6 text-gray-700 leading-relaxed text-justify font-serif text-base md:text-lg">
+                        <p class="font-bold text-gray-900">尊敬的關佩玲校長：</p>
+                        
+                        <p class="indent-8">久仰 貴校在天主教全人教育上的卓越成就。正值 貴校今年歡慶六十五周年校慶，我們對「以愛育生命 同沐主恩頌校慶」的年度主題深感共鳴。靖菓母親作為聖保祿中學的舊生，一直深受修會純樸校風的薰陶，我們全家均殷切期盼靖菓能入讀 貴校，傳承這份優良的「保祿精神」。</p>
+                        
+                        <p class="indent-8">在家庭教育中，我們非常重視配合學校的要求，並教導靖菓尊重老師的教導。她會把老師的話牢記在心，具備較強的紀律意識和是非觀念。如果她發現我們的安排與學校的期望有些出入，她會主動提醒我們，一起調整做法，盡量配合學校的規範。同時，她擁有難能可 貴的「內在驅動力」，在書寫時會自發地反覆修正字體，力求達到老師的高標準，這種自發追求進步的態度，正與 貴校推崇的「成長型思維」不謀而合。這種願意尊重規則又勇於追求卓越的態度，讓我們深信她能完美融入 貴校的校園生活。</p>
+                        
+                        <p class="indent-8">除了專注學習，靖菓亦充滿同理心。她熱愛唱歌、小提琴及烏克麗麗，並能在舞台上自信地透過音樂感染他人。我們深知「台下十年功」的道理，每天均陪伴她恆常練習，培養她的堅毅意志與責任感。</p>
+                        
+                        <p class="indent-8">我們非常認同 貴校所強調「真理、義德、愛德、家庭和生命」的天主教五大核心價值。若靖菓有幸蒙 貴校取錄，我們將全力支持學校的發展，並非常樂意加入家長教師會，積極參與義工服務。作為數碼營銷專業人士，我們具備豐富的宣傳推廣、數碼設計及人工智能應用經驗。我們希望運用這些專業資源，為學校未來的STEAM教育推廣、活動宣傳、刊物設計及校園數碼化發展提供實質支援，與 貴校攜手為孩子建立優質的成長環境。</p>
+                        
+                        <p class="indent-8">懇請 關校長給予靖菓一個面試機會，讓她有機會親身展現對 貴校的嚮往與學習熱誠。</p>
+                        
+                        <div class="pt-10 flex flex-col items-end text-right">
+                            <p class="mb-1 text-sm text-gray-400">家長謹上</p>
+                            <p class="font-bold text-xl text-theme-primary">阮志富、李瑩 敬上</p>
+                            <p class="text-xs text-gray-400 mt-2">聯絡電話: 9388 5017 (阮志富) / 9553 2017 (李瑩)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PAGE 3: ACADEMIC AND CHARACTER -->
+        <div id="page3" class="page-content animate-fade-in">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-serif font-bold text-theme-primary inline-block border-b-4 border-theme-secondary pb-2">學術表現與靈性品格</h2>
+            </div>
+
+            <div class="grid grid-cols-1 gap-12 animate-slide-up">
+                
+                <!-- Academic Card -->
+                <div class="bg-theme-surface rounded-3xl shadow-xl overflow-hidden grid grid-cols-1 md:grid-cols-12 border border-theme-border">
+                    <div class="md:col-span-7 p-8 sm:p-12 flex flex-col justify-center">
+                        <h3 class="text-2xl lg:text-3xl font-serif text-theme-primary mb-6 font-bold">
+                            <span>樂於學習，思維敏捷</span>
+                        </h3>
+                    
+                        <div class="space-y-6">
+                            <div>
+                                <h4 class="font-bold text-gray-900 text-lg mb-2 flex items-center">
+                                    <span class="w-2.5 h-2.5 bg-theme-secondary rounded-full mr-3"></span> 主動助人與語文天份
+                                </h4>
+                                <p class="text-gray-600 leading-relaxed pl-5 text-sm md:text-base">
+                                    老師特別讚賞她在分區活動中，不僅自己能準確拼合中文字，更會主動友善地教導同伴如何根據「部首」拼字，懂得「以清晰的語句引領同伴」，展現出優秀的口語表達能力與領袖潛質。
+                                </p>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900 text-lg mb-2 flex items-center">
+                                    <span class="w-2.5 h-2.5 bg-theme-secondary rounded-full mr-3"></span> 邏輯推算能力
+                                </h4>
+                                <p class="text-gray-600 leading-relaxed pl-5 text-sm md:text-base">
+                                    老師評語指出她對新鮮事物充滿好奇，勇於嘗試和探索。她能精準掌握運算遊戲，對識數學習表現投入，具備良好的邏輯推算能力，並樂於參與富挑戰性的思考遊戲。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Academic Slideshow -->
+                    <div class="md:col-span-5 bg-black/5 relative min-h-[540px] flex">
+                        <div class="relative w-full h-full overflow-hidden shadow-inner group flex-grow">
+                            <img src="https://abc16315.sg-host.com/image/4.jpg" alt="學習與思考 1" class="slide-img absolute inset-0 w-full h-full object-cover object-[20%_center] opacity-100 scale-100 acad-slide-item-1">
+                            <img src="https://abc16315.sg-host.com/image/13.jpg" alt="學習與思考 2" class="slide-img absolute inset-0 w-full h-full object-cover opacity-0 scale-100 acad-slide-item-2">
+                            <img src="https://abc16315.sg-host.com/image/flowerread.jpg" alt="學習與思考 3" class="slide-img absolute inset-0 w-full h-full object-cover opacity-0 scale-100 acad-slide-item-3">
+                            
+                            <div class="absolute bottom-5 left-1/2 transform -translate-x-1/2 flex space-x-2.5 z-20">
+                                <span class="w-2.5 h-2.5 rounded-full bg-white shadow transition-all duration-300 acad-slide-dot-1 opacity-100 cursor-pointer" onclick="showAcadSlide(1)"></span>
+                                <span class="w-2.5 h-2.5 rounded-full bg-white shadow transition-all duration-300 acad-slide-dot-2 opacity-50 cursor-pointer" onclick="showAcadSlide(2)"></span>
+                                <span class="w-2.5 h-2.5 rounded-full bg-white shadow transition-all duration-300 acad-slide-dot-3 opacity-50 cursor-pointer" onclick="showAcadSlide(3)"></span>
+                            </div>
+                            
+                            <button onclick="prevAcadSlide()" aria-label="Previous Slide" class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/85 hover:bg-white rounded-full w-9 h-9 flex items-center justify-center text-gray-800 transition-all shadow-md z-20 opacity-0 group-hover:opacity-100">❮</button>
+                            <button onclick="nextAcadSlide()" aria-label="Next Slide" class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/85 hover:bg-white rounded-full w-9 h-9 flex items-center justify-center text-gray-800 transition-all shadow-md z-20 opacity-0 group-hover:opacity-100">❯</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Character Card -->
+                <div class="bg-theme-surface rounded-3xl shadow-xl overflow-hidden grid grid-cols-1 md:grid-cols-12 border border-theme-border">
+                    <!-- Character Slideshow -->
+                    <div class="md:col-span-5 bg-black/5 relative min-h-[540px] order-last md:order-first flex">
+                        <div class="relative w-full h-full overflow-hidden shadow-inner group flex-grow">
+                            <img src="https://abc16315.sg-host.com/image/6.jpg" alt="自理品格 1" class="slide-img absolute inset-0 w-full h-full object-cover opacity-100 scale-100 char-slide-item-1">
+                            <img src="https://abc16315.sg-host.com/image/3.jpg" alt="自理品格 2" class="slide-img absolute inset-0 w-full h-full object-cover opacity-0 scale-100 char-slide-item-2">
+                            <img src="https://abc16315.sg-host.com/image/2.jpg" alt="自理品格 3" class="slide-img absolute inset-0 w-full h-full object-cover opacity-0 scale-100 char-slide-item-3">
+
+                            <div class="absolute bottom-5 left-1/2 transform -translate-x-1/2 flex space-x-2.5 z-20">
+                                <span class="w-2.5 h-2.5 rounded-full bg-white shadow transition-all duration-300 char-slide-dot-1 opacity-100 cursor-pointer" onclick="showCharSlide(1)"></span>
+                                <span class="w-2.5 h-2.5 rounded-full bg-white shadow transition-all duration-300 char-slide-dot-2 opacity-50 cursor-pointer" onclick="showCharSlide(2)"></span>
+                                <span class="w-2.5 h-2.5 rounded-full bg-white shadow transition-all duration-300 char-slide-dot-3 opacity-50 cursor-pointer" onclick="showCharSlide(3)"></span>
+                            </div>
+                            
+                            <button onclick="prevCharSlide()" aria-label="Previous Slide" class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/85 hover:bg-white rounded-full w-9 h-9 flex items-center justify-center text-gray-800 transition-all shadow-md z-20 opacity-0 group-hover:opacity-100">❮</button>
+                            <button onclick="nextCharSlide()" aria-label="Next Slide" class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/85 hover:bg-white rounded-full w-9 h-9 flex items-center justify-center text-gray-800 transition-all shadow-md z-20 opacity-0 group-hover:opacity-100">❯</button>
+                        </div>
+                    </div>
+
+                    <!-- Character Description -->
+                    <div class="md:col-span-7 p-8 sm:p-12 flex flex-col justify-center bg-theme-primary text-white">
+                        <h3 class="text-2xl lg:text-3xl font-serif mb-6 font-bold tracking-wide">
+                            <span>獨立自理，品格純良</span>
+                        </h3>
+                        <p class="text-white/90 text-sm md:text-base leading-relaxed font-serif text-justify">
+                            老師稱讚她「獨立乖巧、自理能力甚佳」，能妥善處理個人物品並愛護校園環境。配合徐宣教師的教導，Luna 積極在日常生活中實踐「順服、愛心、接納和感恩」，學會主動關心身邊的人，將 貴校重視的「愛德」與「真理」落實於生活細節中。
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- PAGE 4: MUSIC, SPORTS AND ARTS -->
+        <div id="page4" class="page-content animate-fade-in">
+            <div class="text-center mb-12 animate-slide-up">
+                <h2 class="text-3xl font-serif font-bold text-theme-primary inline-block border-b-4 border-theme-secondary pb-2">多元發展 ── 音樂與藝術</h2>
+                <p class="mt-4 text-gray-500 max-w-2xl mx-auto text-sm md:text-base">「一動一靜」的全面培育，塑造自信與專注力</p>
+            </div>
+
+            <div class="space-y-12 animate-slide-up">
+                
+                <!-- Music Section Grid -->
+                <div class="bg-theme-surface rounded-3xl shadow-xl overflow-hidden grid grid-cols-1 md:grid-cols-12 border border-theme-border">
+                    <div class="md:col-span-6 p-8 sm:p-12 flex flex-col justify-center">
+                        <span class="text-xs font-bold text-theme-secondary uppercase tracking-widest mb-2">Music Development</span>
+                        <h3 class="text-2xl lg:text-3xl font-serif font-bold text-theme-primary mb-6">
+                            <span>躍動音符，展現自信</span>
+                        </h3>
+                        <div class="space-y-4 text-gray-600 text-sm md:text-base leading-relaxed text-justify">
+                            <p>
+                                Luna 熱愛唱歌並參與合唱團，同時學習小提琴及烏克麗麗。小提琴導師 Rachel Lee 讚揚她學習態度沉穩專注，能有效將老師的指導融會貫通。在學校她不僅能以唱名唱出歌曲，更能明白基本的音樂節奏符號，運用樂器打奏出穩定的伴奏。去年她獲挑選參與聖誕匯演，在舞台上展現出超越年齡的鎮定與自信。
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Music Slideshow Container -->
+                    <div class="md:col-span-6 p-6 bg-theme-bg/30 flex items-center justify-center">
+                        <div class="relative w-full min-h-[540px] rounded-2xl overflow-hidden shadow-lg group">
+                            <img src="https://abc16315.sg-host.com/image/1.jpg" alt="音樂展示 1" class="slide-img absolute inset-0 w-full h-full object-cover opacity-100 scale-100 music-slide-item-1">
+                            <img src="https://abc16315.sg-host.com/image/8.jpg" alt="音樂展示 2" class="slide-img absolute inset-0 w-full h-full object-cover opacity-0 scale-100 music-slide-item-2">
+                            <img src="https://abc16315.sg-host.com/image/12.jpg" alt="音樂展示 3" class="slide-img absolute inset-0 w-full h-full object-cover opacity-0 scale-100 music-slide-item-3">
+                            
+                            <div class="absolute bottom-5 left-1/2 transform -translate-x-1/2 flex space-x-2.5 z-20">
+                                <span class="w-2.5 h-2.5 rounded-full bg-white shadow transition-all duration-300 music-slide-dot-1 opacity-100 cursor-pointer" onclick="showMusicSlide(1)"></span>
+                                <span class="w-2.5 h-2.5 rounded-full bg-white shadow transition-all duration-300 music-slide-dot-2 opacity-50 cursor-pointer" onclick="showMusicSlide(2)"></span>
+                                <span class="w-2.5 h-2.5 rounded-full bg-white shadow transition-all duration-300 music-slide-dot-3 opacity-50 cursor-pointer" onclick="showMusicSlide(3)"></span>
+                            </div>
+                            
+                            <button onclick="prevMusicSlide()" aria-label="Prev Slide" class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/85 hover:bg-white rounded-full w-9 h-9 flex items-center justify-center text-gray-800 transition-all shadow-md z-20 opacity-0 group-hover:opacity-100">❮</button>
+                            <button onclick="nextMusicSlide()" aria-label="Next Slide" class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/85 hover:bg-white rounded-full w-9 h-9 flex items-center justify-center text-gray-800 transition-all shadow-md z-20 opacity-0 group-hover:opacity-100">❯</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video Showcase Section -->
+                <div class="bg-theme-surface rounded-3xl shadow-xl overflow-hidden grid grid-cols-1 md:grid-cols-12 border border-theme-border">
+                    <div class="md:col-span-6 p-8 sm:p-12 flex flex-col justify-center order-last md:order-first">
+                        <span class="text-xs font-bold text-theme-secondary uppercase tracking-widest mb-2">Practice & Discipline</span>
+                        <h3 class="text-2xl lg:text-3xl font-serif font-bold text-theme-primary mb-6">堅毅自律與親身展示</h3>
+                        <p class="text-gray-600 text-sm md:text-base leading-relaxed text-justify">
+                            我們深知學習弦樂器需要高度紀律，每天均安排固定時間陪伴她練習小提琴與烏克麗麗。這種克服困難的毅力與溫暖強大的家庭支援，是她持續追求卓越的關鍵。
+                        </p>
+                    </div>
+
+                    <!-- Video with Fixed Controls Inside -->
+                    <div class="md:col-span-6 p-6 bg-black flex items-center justify-center aspect-[4/5] md:max-h-[500px]">
+    <div class="relative w-full h-full rounded-2xl overflow-hidden shadow-inner bg-black flex items-center justify-center">
+        <video id="card-video" class="w-full h-full object-cover" autoplay muted loop playsinline webkit-playsinline>
+            <source src="https://abc16315.sg-host.com/image/uke1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="absolute bottom-4 left-0 right-0 flex justify-center space-x-3 z-30">
+            <button onclick="toggleVideoPlayback()" class="bg-theme-primary/85 hover:bg-theme-primary backdrop-blur-sm text-white text-xs font-bold px-4 py-2 rounded-full shadow-lg transition-colors border border-white/20">播放 / 暫停</button>
+            <button onclick="toggleVideoVolume()" class="bg-theme-secondary/85 hover:bg-theme-secondary backdrop-blur-sm text-white text-xs font-bold px-4 py-2 rounded-full shadow-lg transition-colors border border-white/20">切換聲音</button>
+        </div>
+    </div>
+</div>
+                </div>
+
+                <!-- Art/Creative Expression Section -->
+                <div class="bg-theme-surface rounded-3xl shadow-xl overflow-hidden grid grid-cols-1 md:grid-cols-12 border border-theme-border">
+                    <div class="md:col-span-6 p-8 sm:p-12 flex flex-col justify-center">
+                        <span class="text-xs font-bold text-theme-secondary uppercase tracking-widest mb-2">Creative Arts</span>
+                        <h3 class="text-2xl lg:text-3xl font-serif font-bold text-theme-primary mb-6">
+                            <span>美藝創作與探索精神</span>
+                        </h3>
+                        <div class="space-y-4 text-gray-600 text-sm md:text-base leading-relaxed text-justify">
+                            <p>
+                                老師評語指出，Luna 能運用豐富色彩與不同物料進行立體創作。在繪畫與混色活動中，她展現出極佳的探索精神，畫作線條清晰明確，反映出她細膩的觀察力。她不僅能發揮對生活的豐富聯想，更樂於以完整句子分享創作時的所思所想；這種勇於探索且自信表達的特質，正展現出 貴校引導孩子發揮天賦潛能、活出豐盛生命的教育理念。
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Arts Slideshow Container -->
+                    <div class="md:col-span-6 p-6 bg-theme-bg/30 flex items-center justify-center">
+                        <div class="relative w-full min-h-[540px] rounded-2xl overflow-hidden shadow-lg group">
+                            <img src="https://abc16315.sg-host.com/image/10.jpg" alt="美藝創作 1" class="slide-img absolute inset-0 w-full h-full object-cover opacity-100 scale-100 arts-slide-item-1">
+                            <img src="https://abc16315.sg-host.com/image/11.jpg" alt="美藝創作 2" class="slide-img absolute inset-0 w-full h-full object-cover opacity-0 scale-100 arts-slide-item-2">
+                            <img src="https://abc16315.sg-host.com/image/9.jpg" alt="美藝創作 3" class="slide-img absolute inset-0 w-full h-full object-cover opacity-0 scale-100 arts-slide-item-3">
+                            
+                            <div class="absolute bottom-5 left-1/2 transform -translate-x-1/2 flex space-x-2.5 z-20">
+                                <span class="w-2.5 h-2.5 rounded-full bg-white shadow transition-all duration-300 arts-slide-dot-1 opacity-100 cursor-pointer" onclick="showArtsSlide(1)"></span>
+                                <span class="w-2.5 h-2.5 rounded-full bg-white shadow transition-all duration-300 arts-slide-dot-2 opacity-50 cursor-pointer" onclick="showArtsSlide(2)"></span>
+                                <span class="w-2.5 h-2.5 rounded-full bg-white shadow transition-all duration-300 arts-slide-dot-3 opacity-50 cursor-pointer" onclick="showArtsSlide(3)"></span>
+                            </div>
+                            
+                            <button onclick="prevArtsSlide()" aria-label="Prev Slide" class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/85 hover:bg-white rounded-full w-9 h-9 flex items-center justify-center text-gray-800 transition-all shadow-md z-20 opacity-0 group-hover:opacity-100">❮</button>
+                            <button onclick="nextArtsSlide()" aria-label="Next Slide" class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/85 hover:bg-white rounded-full w-9 h-9 flex items-center justify-center text-gray-800 transition-all shadow-md z-20 opacity-0 group-hover:opacity-100">❯</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- PAGE 5: DOCUMENTS AND RECOMMENDATION SCANS -->
+        <div id="page5" class="page-content animate-fade-in">
+            <div class="text-center mb-12 animate-slide-up">
+                <h2 class="text-3xl font-serif font-bold text-theme-primary inline-block border-b-4 border-theme-secondary pb-2">推薦信與附件</h2>
+                <p class="mt-4 text-gray-500 max-w-2xl mx-auto text-sm md:text-base">真實文檔掃描，為靖菓的優秀特質作最強力的背書</p>
+            </div>
+
+            <!-- SPPCS Attachments Scans List -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 animate-slide-up">
+                <!-- Doc 1 -->
+                <div onclick="openDocumentModal('https://abc16315.sg-host.com/image/HKLL_principal_letter-12.png', '謝佩珊校長推薦信', false)" class="bg-theme-surface p-5 rounded-2xl shadow-md border border-theme-border hover:border-theme-secondary hover:shadow-xl transition-all duration-300 flex flex-col items-center text-center group cursor-pointer">
+                    <div class="w-full aspect-[3/4] bg-gray-50 rounded-xl border border-gray-200 mb-4 overflow-hidden relative shadow-sm">
+                        <img src="https://abc16315.sg-host.com/image/HKLL_principal_letter-12.png" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="謝佩珊校長推薦信">
+                        <div class="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    </div>
+                    <h4 class="font-bold text-theme-primary text-base mb-1">謝佩珊校長推薦信</h4>
+                    <p class="text-xs text-gray-400">香港靈糧堂幼稚園校長</p>
+                </div>
+
+                <!-- Doc 2 -->
+                <div onclick="openDocumentModal('https://abc16315.sg-host.com/image/Principal_Chan_letter-1.png', '陳國寧前校長/聖樂總監推薦信', false)" class="bg-theme-surface p-5 rounded-2xl shadow-md border border-theme-border hover:border-theme-secondary hover:shadow-xl transition-all duration-300 flex flex-col items-center text-center group cursor-pointer">
+                    <div class="w-full aspect-[3/4] bg-gray-50 rounded-xl border border-gray-200 mb-4 overflow-hidden relative shadow-sm">
+                        <img src="https://abc16315.sg-host.com/image/Principal_Chan_letter-1.png" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="陳國寧前校長推薦信">
+                        <div class="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    </div>
+                    <h4 class="font-bold text-theme-primary text-base mb-1">陳國寧前校長 推薦信</h4>
+                    <p class="text-xs text-gray-400">聖伯多祿聖保祿堂 聖樂總監</p>
+                </div>
+
+                <!-- Doc 3 -->
+                <div onclick="openDocumentModal('https://abc16315.sg-host.com/image/Ms_Rachel_letter-1.png', '小提琴導師 Rachel Lee 推薦信', false)" class="bg-theme-surface p-5 rounded-2xl shadow-md border border-theme-border hover:border-theme-secondary hover:shadow-xl transition-all duration-300 flex flex-col items-center text-center group cursor-pointer">
+                    <div class="w-full aspect-[3/4] bg-gray-50 rounded-xl border border-gray-200 mb-4 overflow-hidden relative shadow-sm">
+                        <img src="https://abc16315.sg-host.com/image/Ms_Rachel_letter-1.png" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="小提琴導師推薦信">
+                        <div class="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    </div>
+                    <h4 class="font-bold text-theme-primary text-base mb-1">小提琴導師 推薦信</h4>
+                    <p class="text-xs text-gray-400">Rachel Lee 導師撰寫</p>
+                </div>
+
+                <!-- Doc 4 -->
+                <div onclick="openDocumentModal('https://abc16315.sg-host.com/image/Cert_ying_spss_all-1.png', '跆拳道六級升級證書', false)" class="bg-theme-surface p-5 rounded-2xl shadow-md border border-theme-border hover:border-theme-secondary hover:shadow-xl transition-all duration-300 flex flex-col items-center text-center group cursor-pointer">
+                    <div class="w-full aspect-[3/4] bg-gray-50 rounded-xl border border-gray-200 mb-4 overflow-hidden relative shadow-sm">
+                        <img src="https://abc16315.sg-host.com/image/Cert_ying_spss_all-1.png" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="跆拳道證書">
+                        <div class="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    </div>
+                    <h4 class="font-bold text-theme-primary text-base mb-1">跆拳道六級升級證書</h4>
+                    <p class="text-xs text-gray-400">實力與紀律的雙重保證</p>
+                </div>
+                
+                <!-- Doc 5 -->
+                <div onclick="openDocumentModal('https://abc16315.sg-host.com/image/2025-2026_上學期_下高丙_kwo.pdf', '香港靈糧堂幼稚園 2025-2026 評估報告', true)" class="bg-theme-surface p-5 rounded-2xl shadow-md border border-theme-border hover:border-theme-secondary hover:shadow-xl transition-all duration-300 flex flex-col items-center text-center group cursor-pointer">
+                    <div class="w-full aspect-[3/4] bg-gray-50 rounded-xl border border-gray-200 mb-4 overflow-hidden relative shadow-sm">
+                        <img src="https://abc16315.sg-host.com/image/Kwo%20Profile%20cover-1.png" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="評估報告封面">
+                        <div class="absolute inset-0 bg-red-900/15 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center">
+                            <span class="text-xs font-bold text-white bg-red-600 px-3 py-1.5 rounded-lg shadow-md">開啟 PDF 檔案</span>
+                        </div>
+                    </div>
+                    <h4 class="font-bold text-theme-primary text-base mb-1">幼稚園 評估報告</h4>
+                    <p class="text-xs text-gray-400">學期完整評估表</p>
+                </div>
+
+                <!-- Doc 6 -->
+                <div onclick="openDocumentModal('https://abc16315.sg-host.com/image/Cert_ying_spss_all-7.png', '聖保祿中學校友證明文件 (畢業證書)', false)" class="bg-theme-surface p-5 rounded-2xl shadow-md border border-theme-border hover:border-theme-secondary hover:shadow-xl transition-all duration-300 flex flex-col items-center text-center group cursor-pointer">
+                    <div class="w-full aspect-[3/4] bg-gray-50 rounded-xl border border-gray-200 mb-4 overflow-hidden relative shadow-sm">
+                        <img src="https://abc16315.sg-host.com/image/Cert_ying_spss_all-7.png" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="校友證明">
+                        <div class="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    </div>
+                    <h4 class="font-bold text-theme-primary text-base mb-1">母親聖保祿中學校友證明</h4>
+                    <p class="text-xs text-gray-400">李瑩 SPSS 畢業證書證明</p>
+                </div>
+            </div>
+        </div>
+        
+    </main>
+
+    <!-- Interactive Bottom Pattern & Dynamic Motto Footer -->
+    <div class="h-4 w-full theme-pattern-bg"></div>
+    <footer class="bg-theme-primary py-8 px-4 text-white text-center">
+        <div class="max-w-5xl mx-auto space-y-3">
+            <p class="font-serif font-bold text-base md:text-lg uppercase tracking-wider">
+                <span>「 為 一 切 人 ， 成 為 一 切 」</span>
+            </p>
+            <p class="text-xs text-white/60">
+                &copy; 2025-2026 阮靖菓 Luna Yuen 個人升學檔案.
+            </p>
+            <p class="text-[10px] text-white/40">
+                聯絡家長：阮志富 (父親) 9388 5017 | 李瑩 (母親) 9553 2017
+            </p>
+        </div>
+    </footer>
+
+    <!-- High fidelity Document Modal Viewer -->
+    <div id="doc-modal" class="fixed inset-0 bg-black/80 z-[100] hidden items-center justify-center p-4 backdrop-blur-sm transition-all duration-300" onclick="if(event.target === this) closeDocumentModal()">
+        <div class="bg-white rounded-3xl w-full max-w-4xl h-[85vh] flex flex-col overflow-hidden shadow-2xl relative animate-slide-up">
+            <div class="bg-gray-100 px-6 py-4 flex justify-between items-center border-b border-gray-200">
+                <h3 id="modal-doc-title" class="text-lg font-bold text-gray-800 font-serif">文件檢視</h3>
+                <div class="flex items-center space-x-3">
+                    <a id="modal-download-link" href="#" target="_blank" class="text-xs md:text-sm bg-[#38466b] text-white px-4 py-2 rounded-lg hover:opacity-90 transition font-medium">在新分頁開啟 / 下載</a>
+                    <button onclick="closeDocumentModal()" class="text-gray-500 hover:text-gray-800 text-3xl font-light p-1 leading-none">&times;</button>
+                </div>
+            </div>
+            <div class="flex-grow bg-gray-50 p-4 relative flex items-center justify-center overflow-hidden">
+                <div id="pdf-viewer-container" class="w-full h-full hidden">
+                    <iframe id="pdf-iframe" class="w-full h-full rounded-xl border border-gray-300" src="" frameborder="0"></iframe>
+                </div>
+                <div id="img-viewer-container" class="w-full h-full hidden flex items-center justify-center">
+                    <img id="modal-img" src="" alt="Document Scan" class="max-w-full max-h-full object-contain rounded-xl shadow-md">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Controllers for Site Mechanics -->
+    <script>
+        // PDF & Image Scan Document Lightbox controller
+        function openDocumentModal(url, title, isPdf) {
+            const modal = document.getElementById('doc-modal');
+            const modalTitle = document.getElementById('modal-doc-title');
+            const downloadLink = document.getElementById('modal-download-link');
+            const pdfContainer = document.getElementById('pdf-viewer-container');
+            const imgContainer = document.getElementById('img-viewer-container');
+            const pdfIframe = document.getElementById('pdf-iframe');
+            const modalImg = document.getElementById('modal-img');
+
+            if (!modal) return;
+
+            modalTitle.innerText = title;
+            downloadLink.href = url;
+
+            if (isPdf) {
+                pdfContainer.classList.remove('hidden');
+                imgContainer.classList.add('hidden');
+                const encodedUrl = encodeURIComponent(url);
+                pdfIframe.src = `https://docs.google.com/gview?url=${encodedUrl}&embedded=true`;
+            } else {
+                pdfContainer.classList.add('hidden');
+                imgContainer.classList.remove('hidden');
+                modalImg.src = url;
+            }
+
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeDocumentModal() {
+            const modal = document.getElementById('doc-modal');
+            const pdfIframe = document.getElementById('pdf-iframe');
+            if (!modal) return;
+
+            modal.classList.remove('flex');
+            modal.classList.add('hidden');
+            if (pdfIframe) pdfIframe.src = "";
+        }
+
+        // Smooth Scrolling Page Switch
+        function switchPage(pageId) {
+            const target = document.getElementById(pageId);
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        // Update Nav Styles logic
+        function updateNavStyles(activePageId) {
+            const navBtns = document.querySelectorAll('.nav-btn');
+            navBtns.forEach(btn => {
+                if(btn.dataset.target === activePageId) {
+                    btn.classList.add('bg-theme-primary', 'text-white', 'shadow-sm');
+                    btn.classList.remove('text-gray-600', 'hover:bg-theme-bg', 'hover:text-theme-primary');
+                } else {
+                    btn.classList.remove('bg-theme-primary', 'text-white', 'shadow-sm');
+                    btn.classList.add('text-gray-600', 'hover:bg-theme-bg', 'hover:text-theme-primary');
+                }
+            });
+        }
+
+        // Unified Slide Presenter Engine (Ken Burns active scales)
+        function changeSlide(slidePrefix, index, totalSlides) {
+            for (let i = 1; i <= totalSlides; i++) {
+                const img = document.querySelector(`.${slidePrefix}-item-${i}`);
+                const dot = document.querySelector(`.${slidePrefix}-dot-${i}`);
+                
+                if (img && dot) {
+                    if (i === index) {
+                        img.classList.remove('opacity-0');
+                        img.classList.add('opacity-100');
+                        img.style.transform = 'scale(1.05)'; // Apply Ken Burns magnification zoom
+                        dot.classList.remove('opacity-50');
+                        dot.classList.add('opacity-100');
+                    } else {
+                        img.classList.remove('opacity-100');
+                        img.classList.add('opacity-0');
+                        img.style.transform = 'scale(1.00)'; // Reset size to base
+                        dot.classList.remove('opacity-100');
+                        dot.classList.add('opacity-50');
+                    }
+                }
+            }
+        }
+
+        // Slideshow Variables & Settings
+        const SLIDE_DURATION = 2000; // Updated to 2.0s per requirement
+
+        // 1. Main Page Carousels Setup
+        let currentAcadSlide = 1;
+        const totalAcadSlides = 3;
+        let acadInterval = setInterval(nextAcadSlide, SLIDE_DURATION);
+
+        function showAcadSlide(index) {
+            currentAcadSlide = index;
+            changeSlide('acad-slide', index, totalAcadSlides);
+            clearInterval(acadInterval);
+            acadInterval = setInterval(nextAcadSlide, SLIDE_DURATION);
+        }
+        function nextAcadSlide() {
+            let next = currentAcadSlide + 1;
+            if (next > totalAcadSlides) next = 1;
+            showAcadSlide(next);
+        }
+        function prevAcadSlide() {
+            let prev = currentAcadSlide - 1;
+            if (prev < 1) prev = totalAcadSlides;
+            showAcadSlide(prev);
+        }
+
+        let currentCharSlide = 1;
+        const totalCharSlides = 3;
+        let charInterval = setInterval(nextCharSlide, SLIDE_DURATION);
+
+        function showCharSlide(index) {
+            currentCharSlide = index;
+            changeSlide('char-slide', index, totalCharSlides);
+            clearInterval(charInterval);
+            charInterval = setInterval(nextCharSlide, SLIDE_DURATION);
+        }
+        function nextCharSlide() {
+            let next = currentCharSlide + 1;
+            if (next > totalCharSlides) next = 1;
+            showCharSlide(next);
+        }
+        function prevCharSlide() {
+            let prev = currentCharSlide - 1;
+            if (prev < 1) prev = totalCharSlides;
+            showCharSlide(prev);
+        }
+
+        let currentMusicSlide = 1;
+        const totalMusicSlides = 3;
+        let musicInterval = setInterval(nextMusicSlide, SLIDE_DURATION);
+
+        function showMusicSlide(index) {
+            currentMusicSlide = index;
+            changeSlide('music-slide', index, totalMusicSlides);
+            clearInterval(musicInterval);
+            musicInterval = setInterval(nextMusicSlide, SLIDE_DURATION);
+        }
+        function nextMusicSlide() {
+            let next = currentMusicSlide + 1;
+            if (next > totalMusicSlides) next = 1;
+            showMusicSlide(next);
+        }
+        function prevMusicSlide() {
+            let prev = currentMusicSlide - 1;
+            if (prev < 1) prev = totalMusicSlides;
+            showMusicSlide(prev);
+        }
+
+        let currentArtsSlide = 1;
+        const totalArtsSlides = 3;
+        let artsInterval = setInterval(nextArtsSlide, SLIDE_DURATION);
+
+        function showArtsSlide(index) {
+            currentArtsSlide = index;
+            changeSlide('arts-slide', index, totalArtsSlides);
+            clearInterval(artsInterval);
+            artsInterval = setInterval(nextArtsSlide, SLIDE_DURATION);
+        }
+        function nextArtsSlide() {
+            let next = currentArtsSlide + 1;
+            if (next > totalArtsSlides) next = 1;
+            showArtsSlide(next);
+        }
+        function prevArtsSlide() {
+            let prev = currentArtsSlide - 1;
+            if (prev < 1) prev = totalArtsSlides;
+            showArtsSlide(prev);
+        }
+
+        // Interactive Practice Video Showcase playback controller
+        function toggleVideoVolume() {
+            const video = document.getElementById('card-video');
+            if (video) video.muted = !video.muted;
+        }
+
+        function toggleVideoPlayback() {
+            const video = document.getElementById('card-video');
+            if (video) {
+                if (video.paused) {
+                    video.play();
+                } else {
+                    video.pause();
+                }
+            }
+        }
+
+        // Setup Slide Initialization and Scroll Observer
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // Initialize Main Slides
+            changeSlide('acad-slide', 1, totalAcadSlides);
+            changeSlide('char-slide', 1, totalCharSlides);
+            changeSlide('music-slide', 1, totalMusicSlides);
+            changeSlide('arts-slide', 1, totalArtsSlides);
+
+            // Initialize the 6 New "Summary" Mini-Slideshows
+            for (let i = 1; i <= 6; i++) {
+                let currentMiniSlide = 1;
+                setInterval(() => {
+                    currentMiniSlide = currentMiniSlide === 1 ? 2 : 1;
+                    changeSlide(`sum-slide-${i}`, currentMiniSlide, 2);
+                }, SLIDE_DURATION);
+            }
+
+            // Setup Intersection Observer for Scroll Spy
+            const observerOptions = {
+                root: null,
+                rootMargin: '-140px 0px -60% 0px', // Triggers appropriately below the sticky header
+                threshold: 0
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        updateNavStyles(entry.target.id);
+                        
+                        // Scroll active navigation tab into horizontal view if on mobile
+                        const activeBtn = document.querySelector(`button[data-target="${entry.target.id}"]`);
+                        if (activeBtn) {
+                            activeBtn.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+                        }
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.page-content').forEach(page => {
+                observer.observe(page);
+            });
+        });
+    </script>
+</body>
+</html>
